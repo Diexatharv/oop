@@ -1,0 +1,70 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int income,age;
+    string city,vehicleDetails;
+
+
+    cout<<"Enter your age : ";
+    cin>>age;
+    cout<<endl<<"Enter your income : ";
+    cin>>income;
+    cout<<endl<<"Enter your city : ";
+    cin>>city;
+    cout<<endl<<"Do you have 4 Wheeler or not? ";
+    cin>>vehicleDetails;
+
+    cout<<endl<<endl;
+
+    //Exception Handling
+    try
+    {
+        if(18<= age and age<=55)
+        cout<<"Valid age ! "<<endl;
+        else
+        throw age;
+    }
+    catch(int age){
+    cout<<age<<" -this age is causing a Exception "<<endl;
+    }
+
+    try
+    {
+        if(50000<= income and income<=100000)
+        cout<<"Valid income ! "<<endl;
+        else
+        throw income;
+    }
+    catch(int income){
+    cout<<income<<" this income is a Exception "<<endl;
+    }
+
+    try
+    {
+        if(city=="mumbai" or city=="pune" or city=="bangalore" or city=="channai")
+        cout<<"Correct city "<<endl;
+        else
+        throw city;
+    }
+    catch (string city)
+    {
+        cout<<city<<" is not a expected city"<<endl;
+    }
+
+    try
+    {
+        if(vehicleDetails == "yes")
+        cout<<"Correct Vehicle "<<endl;
+        else
+        throw vehicleDetails;
+    }
+    catch (string vehicleDetails)
+    {
+        cout<<"Exception Caught in VechicleDetails"<<endl;
+    }
+
+return 0;
+}
